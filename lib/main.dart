@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutterstate/asyncNotifierProvider.dart';
 import 'package:flutterstate/futurepro.dart';
 import 'package:flutterstate/hive_model.dart';
 import 'package:flutterstate/myhiveAPP.dart';
@@ -15,5 +16,5 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserModelAdapter());
   await Hive.openBox<UserModel>('users');
-  runApp(ProviderScope(child: MaterialApp(home: StateNotifierPro())));
+  runApp(ProviderScope(child: MaterialApp(home: AsyncPro())));
 }
